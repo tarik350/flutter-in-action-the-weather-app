@@ -33,7 +33,7 @@ class ForecastController {
     );
     selectedHourlyTemperature = ForecastDay.getWeatherForHour(
       selectedDay,
-      12,
+      DateTime.now().toLocal().hour,
     );
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:weather_app/controllers/forecast_controller.dart';
 import 'package:weather_app/models/src/app_settings.dart';
@@ -77,7 +79,12 @@ class _ForecastPageState extends State<ForecastPage>
       selectedDay: _forecastController.selectedDay,
       currentlySelectedTimeOfDay: startTime,
     );
+    print(
+        "****** ***** ***${_forecastController.selectedHourlyTemperature.dateTime.hour}");
+    print('this is the start time ${startTime}');
     final activeTabIndex = AnimationUtil.hours.indexOf(startTime);
+
+    print('this is the active tab index${activeTabIndex}');
     _handleStateChange(activeTabIndex);
   }
 
@@ -158,6 +165,7 @@ class _ForecastPageState extends State<ForecastPage>
       begin: currentAnimationState.sunColor,
       end: nextAnimationState.sunColor,
     );
+
     _backgroundColorTween = ColorTween(
       begin: currentAnimationState.backgroundColor,
       end: nextAnimationState.backgroundColor,
@@ -179,6 +187,12 @@ class _ForecastPageState extends State<ForecastPage>
       currentAnimationState.cloudOffsetPosition,
       nextAnimationState.cloudOffsetPosition,
     );
+    print("+++++++++++");
+    print('first offset:');
+    print('x: ${cloudOffsetSequence.positionA}');
+    print('y: ${cloudOffsetSequence.positionB}');
+    print("z ${cloudOffsetSequence.positionC}");
+
     _cloudPositionOffsetTween = TweenSequence<Offset>(
       <TweenSequenceItem<Offset>>[
         TweenSequenceItem<Offset>(
