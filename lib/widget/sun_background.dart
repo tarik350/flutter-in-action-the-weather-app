@@ -15,12 +15,12 @@ class Sun extends AnimatedWidget {
 
     return AspectRatio(
       aspectRatio: 1.0,
-      child:  Container(
+      child: Container(
         margin: EdgeInsets.symmetric(horizontal: margin),
         constraints: BoxConstraints(
           maxWidth: maxWidth,
         ),
-        decoration:  BoxDecoration(
+        decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: animation.value,
         ),
@@ -28,4 +28,3 @@ class Sun extends AnimatedWidget {
     );
   }
 }
-

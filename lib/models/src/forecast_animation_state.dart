@@ -32,7 +32,7 @@ class ForecastAnimationState {
     double cloudOffsetPosition = (condition == WeatherDescription.cloudy ||
             condition == WeatherDescription.rain)
         ? 0.0
-        : 1.2;
+        : 1.0;
 
     switch (roundedInt) {
       case 0:
