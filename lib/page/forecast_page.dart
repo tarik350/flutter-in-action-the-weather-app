@@ -324,9 +324,9 @@ class _ForecastPageState extends State<ForecastPage>
                 Column(
                   verticalDirection: VerticalDirection.up,
                   children: <Widget>[
-                    forecastContent,
-                    mainContent,
-                    Flexible(child: timePickerRow),
+                    //forecastContent,
+                    //mainContent,
+                    //Flexible(child: timePickerRow),
                   ],
                 ),
               ],
