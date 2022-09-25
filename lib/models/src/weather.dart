@@ -25,6 +25,13 @@ class ForecastDay {
       // 0 == midnight
       return self.hourlyWeather.last;
     }
+    print('===========');
+    print('the hour being passed to us is ${hour}');
+    for (int i = 0; i < self.hourlyWeather.length; i++) {
+      print('total lenth of weather objects ${self.hourlyWeather.length}');
+      print('the hour at index ${i} is ${self.hourlyWeather[i].dateTime.hour}');
+    }
+
     return self.hourlyWeather
         .firstWhere((Weather w) => w.dateTime.hour >= hour);
   }

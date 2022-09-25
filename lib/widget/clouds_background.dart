@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class Clouds extends AnimatedWidget {
   final bool isRaining;
@@ -47,7 +48,7 @@ class CloudPainter extends CustomPainter {
     var figureCenter = size.width / 2;
 
     var cloudBaseRect = Rect.fromPoints(
-      Offset(figureLeftEdge, rectTop),
+      Offset(figureLeftEdge, rectTop - 10),
       Offset(figureRightEdge, rectBottom),
     );
     var cloudBase = RRect.fromRectAndRadius(
@@ -77,8 +78,10 @@ class CloudPainter extends CustomPainter {
         } else {
           rainDropOffsetYStart -= 7.0;
         }
-        canvas.drawLine(Offset(rainDropOffsetXStart, rainDropOffsetYStart),
-            Offset(rainDropOffsetXEnd, rainDropOffsetYStart + rainDropLength), cloudPaint);
+        canvas.drawLine(
+            Offset(rainDropOffsetXStart, rainDropOffsetYStart),
+            Offset(rainDropOffsetXEnd, rainDropOffsetYStart + rainDropLength),
+            cloudPaint);
       }
     }
   }

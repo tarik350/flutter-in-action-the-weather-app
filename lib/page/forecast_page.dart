@@ -50,6 +50,9 @@ class _ForecastPageState extends State<ForecastPage>
   @override
   void initState() {
     super.initState();
+
+    //this is besically what the line below doing
+    //_forecastController =ForecastController(City(name: "Portland", country: Country.US, active: true, listIdx: 0));
     _forecastController = ForecastController(widget.settings.activeCity);
     _render();
   }
@@ -135,7 +138,10 @@ class _ForecastPageState extends State<ForecastPage>
   }
 
   void _buildAnimationController() {
+    //this tells the animation controller previously built to not use any resource
     _animationController?.dispose();
+    //and this line then create another animation controller everytime the state changes ==> meaning everytime
+    //the value of activeTabIndex changes
     _animationController = AnimationController(
       duration: Duration(milliseconds: 500),
       vsync: this,
@@ -288,6 +294,7 @@ class _ForecastPageState extends State<ForecastPage>
                     ),
                   ),
                   child: Sun(
+                    // _colorTween.animate(_animationController) ==> this is an instance of animation
                     animation: _colorTween.animate(_animationController),
                   ),
                 ),
