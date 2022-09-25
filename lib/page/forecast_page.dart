@@ -187,11 +187,9 @@ class _ForecastPageState extends State<ForecastPage>
       currentAnimationState.cloudOffsetPosition,
       nextAnimationState.cloudOffsetPosition,
     );
-    print("+++++++++++");
-    print('first offset:');
-    print('x: ${cloudOffsetSequence.positionA}');
-    print('y: ${cloudOffsetSequence.positionB}');
-    print("z ${cloudOffsetSequence.positionC}");
+    print('--------------');
+    print(currentAnimationState.sunOffsetPosition);
+    print(nextAnimationState.sunOffsetPosition);
 
     _cloudPositionOffsetTween = TweenSequence<Offset>(
       <TweenSequenceItem<Offset>>[
